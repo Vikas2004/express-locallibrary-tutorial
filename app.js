@@ -16,7 +16,7 @@ const app = express();
 dotenv.config({ path: '.env' })
 const mongoose = require('mongoose');
 
-var dev_db_url = 'mongodb+srv://vikas2006:<vikas2006>@cluster0-uaojr.azure.mongodb.net/test?retryWrites=true&w=majority'
+var dev_db_url = 'mongodb+srv://vikas2006:vikas2006@cluster0-uaojr.azure.mongodb.net/test?retryWrites=true&w=majority'
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
@@ -27,7 +27,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(helmet());  
+app.use(helmet());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
